@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemFrete</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/imgs/temfrete.ico" type="image/x-icon">
+    <!-- FrameWork -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+      defer></script>
+    <!-- CDNS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;1,100;1,200&family=Inconsolata:wght@200;300;400;500&family=Inter:wght@100;200;300;400;500&family=Lato:wght@100;300;400;700&family=Mohave:wght@300;400&family=Oswald:wght@200;300;400&family=Quicksand:wght@300;400;500&family=Roboto+Condensed:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/frete.css">
+  </head>
+
+  <body>
+    <section class="top-return fixed-top d-flex d-lg-none justify-content-between">
+      <div class="icon-return text-center">
+        <!-- LINK -->
+        <a href="index.html">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+      </div>
+      <div class="search-freight">
+        <button><a href="#">Busque por Fretes</a></button>
+      </div>
+      <!-- LINK -->
+      <div class="filter-slider text-center">
+        <i class="fa-solid fa-sliders"></i>
+      </div>
+    </section>
+    <header class="header fixed-top" id="header">
+      <div class="container-fluid">
+        <nav class="navbar d-flex align-items-center w-sm-100" id="navbar">
+          <div class="logo fs-2">
+            <a href="index.html">Tem &nbsp; <span class="fw-bold">Frete</span></a>
+          </div>
+          <ul class="menu w-75 d-lg-flex d-md-none d-sm-none justify-content-around" id="menu">
+            <li class="menu-item"><a href="index.html">Inicio</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-building"></i> Empresas</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-id-card"></i> Motoristas</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-square-phone"></i> Contato</a></li>
+            <li class="menu-item dropdown menu-drop">
+              <a href="#" class="dropdown" id="userDrop" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fa-solid fa-user"></i> Usuário
+              </a>
+              <div class="dropdown-menu" aria-labelledby="userDrop">
+                <a class="dropdown-item" href="#">Entrar</a>
+                <a class="dropdown-item" href="#">Cadastrar</a>
+                <hr>
+                <a class="dropdown-item" href="#">Sair</a>
+              </div>
+            </li>
+            <li class="menu-item d-lg-none"><a href="#"> Ir para o App <svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-google-play" viewBox="0 0 16 16">
+                  <path
+                    d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96 2.694-1.586Zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055l7.294-4.295ZM1 13.396V2.603L6.846 8 1 13.396ZM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27Z" />
+                </svg></a></li>
+          </ul>
+          <div id="menu-icon" class="menu-icon d-sm-flex d-lg-none" onclick="menuShowing()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main-freight">
+
+      <div class="cell-filter">
+        <aside class="options-cell">
+          <a href="#">Raio&nbsp;de&nbsp;Alcance</a>
+          <a href="#">Tipo&nbsp;de&nbsp;Veículo</a>
+          <a href="#">Tipo&nbsp;de&nbsp;Carga</a>
+          <a href="#">Preço</a>
+          <a href="#">Agenciamento</a>
+          <a href="#">Rastreador</a>
+          <a href="#">Complemento</a>
+        </aside>
+
+        <div class="message-cell">
+          <div class="icon-link">
+            <i class="fa-solid fa-eye"></i>
+            <p>Entre na sua <a href="#">conta</a> ou <a href="#">criar uma conta</a> pare ver os fretes disponiveis</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="desktop-filter">
+        <div class="container ">
+
+            <div class="options">
+
+              <div class="op-origin-destiny">
+
+                <div class="origin-op">
+                  <h4>De:</h4>
+                  <a href="#" class="dropdown" id="origin-dsk-filter" data-bs-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Local de Origem
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="states-nort">
+                      <p class="nort-title">Norte: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="AC" class="dropdown-item">
+                        <label for="AC">Acre</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="AM" class="dropdown-item">
+                        <label for="AM">Amazonas</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="AP" class="dropdown-item">
+                        <label for="AP">Amapá</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PA" class="dropdown-item">
+                        <label for="PA">Pará</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RO" class="dropdown-item">
+                        <label for="RO">Rondônia</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RR" class="dropdown-item">
+                        <label for="RR">Roraima</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="TO" class="dropdown-item">
+                        <label for="TO">Tocantins</label>
+                      </div>
+                    </div>
+                    <div class="states-northeast">
+                      <p class="northeast-title">Nordeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="AL" class="dropdown-item">
+                        <label for="AL">Alagoas</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="BA" class="dropdown-item">
+                        <label for="BA">Bahia</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="CE" class="dropdown-item">
+                        <label for="CE">Ceara</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MA" class="dropdown-item">
+                        <label for="MA">Maranhão</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PB" class="dropdown-item">
+                        <label for="PB">Paraiba</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PE" class="dropdown-item">
+                        <label for="PE">Pernambuco</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PI" class="dropdown-item">
+                        <label for="PI">Piauí</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RN" class="dropdown-item">
+                        <label for="RN">Rio Grande do Norte</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SE" class="dropdown-item">
+                        <label for="SE">Sergipe</label>
+                      </div>
+                    </div>
+                    <div class="states-midwest">
+                      <p class="midwest-title">Centro Oeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="DF" class="dropdown-item">
+                        <label for="DF">Distrito Federal</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="GO" class="dropdown-item">
+                        <label for="GO">Goiás</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MT" class="dropdown-item">
+                        <label for="MT">Mato Grosso</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MS" class="dropdown-item">
+                        <label for="MS">Mato Grosso do Sul</label>
+                      </div>
+                    </div>
+                    <div class="states-southeast">
+                      <p class="southeast-title">Sudeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="ES" class="dropdown-item">
+                        <label for="DF">Espirito Santo</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MG" class="dropdown-item">
+                        <label for="MG">Minas Gerais</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RJ" class="dropdown-item">
+                        <label for="RJ">Rio de Janeiro</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SP" class="dropdown-item">
+                        <label for="SP">São Paulo</label>
+                      </div>
+                    </div>
+                    <div class="states-south">
+                      <p class="south-title">Sul: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="PR" class="dropdown-item">
+                        <label for="PR">Paraná</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RS" class="dropdown-item">
+                        <label for="RS">Rio Grande do Sul</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SC" class="dropdown-item">
+                        <label for="SC">Santa Catarina</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="destiny-op">
+                  <h4>Para:</h4>
+                  <a href="#" class="dropdown" id="destiny-dsk-filter" data-bs-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Local de Destino
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="states-nort">
+                      <p class="nort-title">Norte: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="AC" class="dropdown-item" id="AC">
+                        <label for="AC">Acre</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="AM" class="dropdown-item" id="AM">
+                        <label for="AM">Amazonas</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="AP" class="dropdown-item" id="AP">
+                        <label for="AP">Amapá</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PA" class="dropdown-item" id="PA">
+                        <label for="PA">Pará</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RO" class="dropdown-item" id="RO">
+                        <label for="RO">Rondônia</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RR" class="dropdown-item" id="RR">
+                        <label for="RR">Roraima</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="TO" class="dropdown-item" id="TO">
+                        <label for="TO">Tocantins</label>
+                      </div>
+                    </div>
+                    <div class="states-northeast">
+                      <p class="northeast-title">Nordeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="AL" class="dropdown-item" id="AL">
+                        <label for="AL">Alagoas</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="BA" class="dropdown-item" id="BA">
+                        <label for="BA">Bahia</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="CE" class="dropdown-item" id="CE">
+                        <label for="CE">Ceara</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MA" class="dropdown-item" id="MA">
+                        <label for="MA">Maranhão</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PB" class="dropdown-item" id="PB">
+                        <label for="PB">Paraiba</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PE" class="dropdown-item" id="PE">
+                        <label for="PE">Pernambuco</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="PI" class="dropdown-item" id="PI">
+                        <label for="PI">Piauí</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RN" class="dropdown-item" id="RN">
+                        <label for="RN">Rio Grande do Norte</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SE" class="dropdown-item" id="SE">
+                        <label for="SE">Sergipe</label>
+                      </div>
+                    </div>
+                    <div class="states-midwest">
+                      <p class="midwest-title">Centro Oeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="DF" class="dropdown-item" id="DF">
+                        <label for="DF">Distrito Federal</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="GO" class="dropdown-item" id="GO">
+                        <label for="GO">Goiás</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MT" class="dropdown-item" id="MT">
+                        <label for="MT">Mato Grosso</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MS" class="dropdown-item" id="MS">
+                        <label for="MS">Mato Grosso do Sul</label>
+                      </div>
+                    </div>
+                    <div class="states-southeast">
+                      <p class="southeast-title">Sudeste: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="ES" class="dropdown-item" id="ES">
+                        <label for="DF">Espirito Santo</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="MG" class="dropdown-item" id="MG">
+                        <label for="MG">Minas Gerais</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RJ" class="dropdown-item" id="RJ">
+                        <label for="RJ">Rio de Janeiro</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SP" class="dropdown-item" id="SP">
+                        <label for="SP">São Paulo</label>
+                      </div>
+                    </div>
+                    <div class="states-south">
+                      <p class="south-title">Sul: </p>
+                      <div class="states-option">
+                        <input type="checkbox" name="PR" class="dropdown-item" id="PR">
+                        <label for="PR">Paraná</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="RS" class="dropdown-item" id="RS">
+                        <label for="RS">Rio Grande do Sul</label>
+                      </div>
+                      <div class="states-option">
+                        <input type="checkbox" name="SC" class="dropdown-item" id="SC">
+                        <label for="SC">Santa Catarina</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="bodywork">
+                <div class="bwork-truck">
+                    <h2 class="title">
+                      Tipo de Carroceria:
+                    </h2>
+                    <div class="checked-open">
+                      <div class="title-check-open">
+                        <h5 >Abertas:</h5>
+                      </div>
+                      <div class="item-open-check">
+                        <input type="checkbox" name="Graneleiro" id="Graneleiro">
+                        <label for="Graneleiro">Graneleiro</label>
+                      </div>
+                      <div class="item-open-check">
+                        <input type="checkbox" name="Grade-Baixa" id="Grade-Baixa">
+                        <label for="Grade-Baixa">Grade Baixa</label>
+                      </div>
+                      <div class="item-open-check">
+                        <input type="checkbox" name="Prancha" id="Prancha">
+                        <label for="Prancha">Prancha</label>
+                      </div>
+                      <div class="item-open-check">
+                        <input type="checkbox" name="Cacamba" id="Cacamba">
+                        <label for="Cacamba">Caçamba</label>
+                      </div>
+                      <div class="item-open-check">
+                        <input type="checkbox" name="Plataforma" id="Plataforma">
+                        <label for="Plataforma">Plataforma</label>
+                      </div>
+                    </div>
+                    <div class="checked-closed">
+                      <div class="title-check-closed">
+                        <h5>Fechada:</h5>
+                      </div>
+                      <div class="item-closed-check">
+                        <input type="checkbox" name="Sider" id="Sider">
+                        <label for="Sider">Sider</label>
+                      </div>
+                      <div class="item-closed-check">
+                        <input type="checkbox" name="Bau" id="Bau">
+                        <label for="Bau">Baú</label>
+                      </div>
+                      <div class="item-closed-check">
+                        <input type="checkbox" name="Bau-frigorifico" id="Bau-frigorifico">
+                        <label for="Bau-frigorifico">Baú Frigorifico</label>
+                      </div>
+                      <div class="item-closed-check">
+                        <input type="checkbox" name="Bau-refrigerado" id="Bau-refrigerado">
+                        <label for="Bau-refrigerado">Baú Refrigerado</label>
+                      </div>
+                    </div>
+                    <div class="checked-outher">
+                      <div class="title-check-outher">
+                        <h5>Outros tipos:</h5>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Silo" id="Silo">
+                        <label for="Silo">Silo</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Cegonheiro" id="Cegonheiro">
+                        <label for="Cegonheiro">Cegonheiro</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Gaiola" id="Gaiola">
+                        <label for="Gaiola">Gaiola</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Tanque" id="Tanque">
+                        <label for="Tanque">Tanque</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Porta-Container" id="Porta-Container">
+                        <label for="Porta-Container">Porta Container</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Munk" id="Munk">
+                        <label for="Munk">Munk</label>
+                      </div>
+                      <div class="item-outher-check">
+                        <input type="checkbox" name="Animais" id="Animais">
+                        <label for="Animais">Animais</label>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="prices">
+                <div class="filter-prices">
+                  <h4 class="title-price">
+                    Ver por Preços:
+                  </h4>
+                  <input type="range" name="price" id="price-filter" min="0" max="10000000" class="range-value">
+                  <span id="price-value" class="prince-value">R$0,00</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="items-filter">
+              <div class="content">
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+                <div class="items-freight-filter">
+                  <div class="company-freight">
+                    <h2>Empresa 1</h2>
+                  </div>
+                  <div class="route-origin-destiny">
+                    <p class="item-origin-freigth">De: <span class="city-origin-filter">São José dos Campos</span>, <span
+                        class="state-origin-filter">SP</span></p>
+                    <p class="item-destiny-freigth">Para: <span class="city-distiny-filter">João Pessoa</span>, <span
+                        class="state-distiny-filter">PB</span></p>
+                  </div>
+                  <div class="description-freight">
+                    <p><span class="description-1">1.991</span>&nbsp;KM</p>
+                    <p><span class="description-2">Graneleiro</span></p>
+                  </div>
+                  <div class="price-value-freight">
+                    <p class="price-total-freight">R$ 35.342,00</p>
+                  </div>
+                </div>
+              </div>
+              <div class="freight-navegation">
+                  <button><i class="fa-solid fa-arrow-left"></i></button>
+
+                  <p class="item-navegation"><a href="#">1</a></p>
+                  <p class="item-navegation"><a href="#">2</a></p>
+                  <p class="item-navegation"><a href="#">3</a></p>
+                  <p class="item-navegation"><a href="#">4</a></p>
+                  <p class="item-navegation"><a href="#">...</a></p>
+                  <p class="item-navegation"><a href="#">10</a></p>
+
+
+                  <button><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </main>
+
+
+    <footer class="footer d-sm-flex text-center">
+      <div class="content w-75">
+        <div class="midia d-flex justify-content-around w-25">
+          <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-regular fa-envelope"></i></a>
+          <a href="#"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <div class="terms">
+          <p>Tem Frete CNPJ 00.000.000/0000-00</p>
+          <p>&copy; Copyright 2023</p>
+          <p><a href="#">Termos de Uso</a></p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

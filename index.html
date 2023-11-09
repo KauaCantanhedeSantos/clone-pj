@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TemFrete</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/imgs/temfrete.ico" type="image/x-icon">
+  <!-- FrameWork -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+    defer></script>
+  <!-- CDNS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;1,100;1,200&family=Inconsolata:wght@200;300;400;500&family=Inter:wght@100;200;300;400;500&family=Lato:wght@100;300;400;700&family=Mohave:wght@300;400&family=Oswald:wght@200;300;400&family=Quicksand:wght@300;400;500&family=Roboto+Condensed:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+      <header class="header fixed-top" id="header">
+        <div class="container-fluid">
+          <nav class="navbar d-flex align-items-center w-sm-100" id="navbar">
+            <div class="logo fs-2">
+              <a href="index.html">Tem &nbsp; <span class="fw-bold">Frete</span></a>
+            </div>
+            <ul class="menu w-75 d-lg-flex d-md-none d-sm-none justify-content-around" id="menu">
+              <li class="menu-item"><a href="fretes.html"><i class="fa-solid fa-truck-fast"></i>Fretes</a></li>
+              <li class="menu-item"><a href="empresas.html]"><i class="fa-solid fa-building"></i> Empresas</a></li>
+              <li class="menu-item"><a href="#"><i class="fa-solid fa-id-card"></i> Motoristas</a></li>
+              <li class="menu-item"><a href="#"><i class="fa-solid fa-square-phone"></i> Contato</a></li>
+              <li class="menu-item dropdown menu-drop">
+                <a href="#" class="dropdown" id="userDrop" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-user"></i> Usuário
+                </a>
+                <div class="dropdown-menu" aria-labelledby="userDrop">
+                  <a class="dropdown-item" href="#">Entrar</a>
+                  <a class="dropdown-item" href="#">Cadastrar</a>
+                  <hr>
+                  <a class="dropdown-item" href="#">Sair</a>
+                </div>
+              </li>
+              <li class="menu-item d-lg-none"><a href="#"> Ir para o App <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-google-play" viewBox="0 0 16 16">
+                    <path
+                      d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96 2.694-1.586Zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055l7.294-4.295ZM1 13.396V2.603L6.846 8 1 13.396ZM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27Z" />
+                  </svg></a></li>
+            </ul>
+            <div id="menu-icon" class="menu-icon d-sm-flex d-lg-none" onclick="menuShowing()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+    <section class="slogan">
+        <div class="backslogan">
+          <img src="assets/imgs/truck1.jpg" alt="">
+        </div>
+        <div class="content d-flex">
+          <p>Quer Frete?</p>
+          <p>Tem Frete.</p>
+        </div>
+      </section>
+
+      <main class="main">
+
+        <section class="search d-lg-flex -justy">
+
+          <div class="content">
+            <div class="text">
+              <p>Busque pelas melhores ofertas de frete baseado em seus interesses: </p>
+            </div>
+
+            <ul class="results">
+              <li class="row">
+                <a href="fretes.html">
+                  <p>São Paulo - <span id="val-freight-sp">1.243</span></p>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </li>
+              <li class="row">
+                <a href="fretes.html">
+                  <p>Belo Horizonte - <span id="val-freight-bh">2.343</span></p>
+                  <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+              </li>
+              <li class="row">
+                <a href="fretes.html">
+                  <p>Salvador - <span id="val-freigh-slv">1.743</span></p>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </li>
+              <li class="row">
+                <a href="fretes.html">
+                  <p>Goiânia - <span id="val-freight-gna">2.943</span></p>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </li>
+              <li class="row">
+                <a href="fretes.html">
+                  <p>Porto Alegre - <span id="val-freight-pa">843</span></p>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="btn d-lg-flex">
+              <button type="submit">
+                <a href="fretes.html">
+                  Buscar Frete
+                  <i class="fa-solid fa-truck-fast"></i>
+                </a>
+              </button>
+              <button type="submit">
+                <a href="#">Anunciar Frete</a>
+              </button>
+            </div>
+          </div>
+
+
+        </section>
+
+       <section class="model-business d-lg-flex justify-content-center">
+          <div class="content">
+            <div class="title">
+              <p>O modelo de negocio funciona da seguinte forma: </p>
+            </div>
+            <div class="map d-lg-flex justify-content-between">
+              <div class="card">
+                <div class="img">
+                <img src="assets/svgs/company-svgrepo-com.svg" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="card-title">
+                    As empresas cadastradas publicam os fretes que precisam de motoristas
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="img">
+                  <img src="assets/svgs/truck-svgrepo-com.svg" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="card-title">
+                    Os motoristas cadastrados podem buscar fretes para realizar o transporte da carga
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="img">
+                  <img src="assets/svgs/handshake-svgrepo-com.svg" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="card-title">
+                    O motoristas pode assinar um contrato com a empresa para transporte da carga
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about d-lg-flex justify-content-center">
+            <div class="title w-100 text-center fw-bold">
+              <h2>Saiba mais</h2>
+            </div>
+          <div class="content d-lg-flex">
+            <div class="company">
+              <h2>Empresas</h2>
+              <p>Ainda com duvidas? Veja como você pode impulsionar os negocios de sua empresa</p>
+              <button><a href="#">Saiba Mais</a></button>
+            </div>
+            <div class="driver">
+              <h2>Motoristas</h2>
+              <p>Ainda em duvida sobre os fretes? Veja achar o melhor frete para você de acordo com sua logistica</p>
+              <button><a href="#">Saiba Mais</a></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="numbers d-flex justify-content-center">
+          <div class="content">
+            <div class="title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor" class="bi bi-bar-chart-line"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
+              </svg>
+              <h2>Veja os nossos numeros</h2>
+            </div>
+            <div class="marge d-lg-flex justify-content-around">
+              <div class="numb-mrg">
+                <h2>+ 12.543</h2>
+                <p>Fretes Disponíveis</p>
+              </div>
+              <div class="numb-mrg">
+                <h2>+ 348.543</h2>
+                <p>Motoristas Cadastrados</p>
+              </div>
+              <div class="numb-mrg">
+                <h2>+ 102.543</h2>
+                <p>Empresas Cadastradas</p>
+              </div>
+              <div class="numb-mrg">
+                <h2>+ 2.543</h2>
+                <p>Cidades com Fretes</p>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="application d-flex justify-content-center">
+          <div class="content">
+            <div class="top-text text-center">
+                <h2 class="title">Conheça Nosso App</h2>
+                <p>Acesse a loja de aplicativos de seu celular e baixe nosso App</p>
+            </div>
+            <div class="store text-center">
+              <img src="assets/imgs/selo-ps.png" alt="">
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer d-sm-flex text-center">
+        <div class="content w-75">
+          <div class="midia d-flex justify-content-around w-25">
+            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+          </div>
+          <div class="terms">
+            <p>Tem Frete CNPJ 00.000.000/0000-00</p>
+            <p>&copy; Copyright 2023</p>
+            <p><a href="#">Termos de Uso</a></p>
+          </div>
+        </div>
+      </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
