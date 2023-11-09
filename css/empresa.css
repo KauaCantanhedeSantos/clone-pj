@@ -1,0 +1,93 @@
+body{
+  font-family: mohave;
+}
+@media (min-width: 1024px){
+  .main-company{
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    margin: 7rem 0;
+  }
+  .main-company .company-section{
+    width: 90%;
+    display: flex;
+    border: 1px solid blue;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    margin:  1rem 0;
+  }
+  .main-company .company-section .description-company{
+    padding: 2rem;
+    width: 40%;
+    box-shadow: 0.3rem 0.3rem 0.5rem gray;
+  }
+  .main-company .company-section .description-company h3{
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .main-company .company-section .description-company p{
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  /* FORMULARIO */
+  .main-company .form-company{
+    width: 50%;
+    padding: 2rem;
+  }
+  .main-company .form-company .form-comp{
+    padding: 1rem;
+  }
+  .main-company .form-company .form-comp .message-form{
+    border-radius: 0.3rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 0.1rem;
+    margin:  0 0 1rem 0;
+    box-shadow: 0.2rem 0.2rem 0.3rem gray;
+    color: red;
+    font-weight: bold;
+    background-color: rgb(255, 241, 241);
+    font-size: 1.2rem;
+  }
+  .main-company .form-company .form-comp .title-form h3{
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    margin:  0 0 1rem 0;
+    box-shadow: 0.2rem 0.2rem 0.3rem gray;
+  }
+  .main-company .form-company .form-comp .inputs-forms{
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    box-shadow: 0.2rem 0.2rem 0.4rem gray;
+  }
+  .main-company .form-company .form-comp .inputs-forms .row{
+    margin: 0.5rem 0;
+    width: 90%;
+    padding: 0.5rem;
+  }
+  .main-company .form-company .form-comp .inputs-forms .row label{
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+  }
+  .main-company .form-company .form-comp .inputs-forms .row input{
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem gray;
+    border: 1px solid gray;
+    padding: 0.5rem;
+  }
+  .main-company .form-company .form-comp .inputs-forms .row button{
+    border: none;
+    box-shadow: 0.2rem 0.2rem 0.3rem gray;
+    padding: 0.5rem;
+    width: 50%;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+  }
+}
