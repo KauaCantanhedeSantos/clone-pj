@@ -23,3 +23,26 @@ priceFilter.addEventListener("input", function () {
 function formatPrice(value) {
   return (value / 100).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
+
+//Recolher e mostrar perguntas frequentes
+
+let idAsked = null;
+
+function displayAnswer(answerCard) {
+  let answerSee = document.getElementById(answerCard);
+
+  if (answerSee !== null && answerSee !== idAsked) {
+    let answerSeeClick = document.getElementById(idAsked);
+    if (answerSeeClick !== null) {
+      answerSeeClick.style.display = 'none';
+    }
+  }
+
+  if (answerSee.style.display === 'none') {
+    answerSee.style.display = 'block';
+  } else {
+    answerSee.style.display = 'none';
+  }
+
+  idAsked = answerSee.style.display === 'none' ? null : answerCard;
+}
